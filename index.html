@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Solitaire Battle</title>
+    <title>knifehit</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
@@ -23,16 +23,17 @@
     </div>
     <div id="unity-fullscreen-button" style="display: none;"></div>
     <script>
-      const hideFullScreenButton = "0";
+     // const hideFullScreenButton = "0";
       const buildUrl = "Build";
       const loaderUrl = buildUrl + "/hitKnife.loader.js";
       const config = {
         dataUrl: buildUrl + "/hitKnife.data",
         frameworkUrl: buildUrl + "/hitKnife.framework.js",
         codeUrl: buildUrl + "/hitKnife.wasm",
+        symbolsUrl: buildUrl + "/hitKnife.symbols.json",
         streamingAssetsUrl: "StreamingAssets",
-        companyName: "Piper",
-        productName: "Solitaire Battle",
+        companyName: "Piperplay",
+        productName: "knifehit",
         productVersion: "1.0",
       };
 
@@ -66,6 +67,7 @@
         setTimeout(function(){ window.scrollTo(0, 1) }, 3000);
 
       }
+      canvas.style.background = "url('" + buildUrl + "/hitKnife.jpg') center / cover";
       loadingCover.style.display = "";
 
       const script = document.createElement("script");
@@ -78,12 +80,12 @@
         }).then((unityInstance) => {
           loadingCover.style.display = "none";
           if (canFullscreen) {
-            if (!hideFullScreenButton) {
+            /*if (!hideFullScreenButton) {
               fullscreenButton.style.display = "";
             }
             fullscreenButton.onclick = () => {
               unityInstance.SetFullscreen(1);
-            };
+            };*/
           }
         }).catch((message) => {
           alert(message);
