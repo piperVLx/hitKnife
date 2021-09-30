@@ -25,12 +25,12 @@
     <script>
      // const hideFullScreenButton = "0";
       const buildUrl = "Build";
-      const loaderUrl = buildUrl + "/hitKnife.loader.js";
+      const loaderUrl = buildUrl + "/Webgl_KnifeHit.loader.js";
       const config = {
-        dataUrl: buildUrl + "/hitKnife.data",
-        frameworkUrl: buildUrl + "/hitKnife.framework.js",
-        codeUrl: buildUrl + "/hitKnife.wasm",
-        symbolsUrl: buildUrl + "/hitKnife.symbols.json",
+        dataUrl: buildUrl + "/Webgl_KnifeHit.data.unityweb",
+        frameworkUrl: buildUrl + "/Webgl_KnifeHit.framework.js.unityweb",
+        codeUrl: buildUrl + "/Webgl_KnifeHit.wasm.unityweb",
+        symbolsUrl: buildUrl + "/Webgl_KnifeHit.symbols.json.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Piperplay",
         productName: "knifehit",
@@ -67,7 +67,7 @@
         setTimeout(function(){ window.scrollTo(0, 1) }, 3000);
 
       }
-      canvas.style.background = "url('" + buildUrl + "/hitKnife.jpg') center / cover";
+      canvas.style.background = "url('" + buildUrl + "/Webgl_KnifeHit.jpg') center / cover";
       loadingCover.style.display = "";
 
       const script = document.createElement("script");
