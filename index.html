@@ -7,30 +7,39 @@
     <title>knifehit</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   </head>
   <body class="dark">
+    <div id= "video">
+      
+      <img id ="vid" src="splash.gif" alt="splash" /> 
+     
+  </div>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas"></canvas>
     </div>
     <div id="loading-cover" style="display:none;">
       <div id="unity-loading-bar">
-        <div id="unity-logo"><img src="logo.png"></div>
+        
+        <div id="unity-logo"><img src="logo.png" id ="gameLogo"></div>
+        
         <div id="unity-progress-bar-empty" style="display: none;">
           <div id="unity-progress-bar-full"></div>
         </div>
+        <div id="unity-logo"><img src="GS-LOGO.png" id ="GameStake"></div>
         <div class="spinner"></div>
       </div>
     </div>
     <div id="unity-fullscreen-button" style="display: none;"></div>
     <script>
-     // const hideFullScreenButton = "0";
+      const hideFullScreenButton = "0";
       const buildUrl = "Build";
-      const loaderUrl = buildUrl + "/Webgl_KnifeHit.loader.js";
+      const loaderUrl = buildUrl + "/hitKnife.loader.js";
       const config = {
-        dataUrl: buildUrl + "/Webgl_KnifeHit.data.unityweb",
-        frameworkUrl: buildUrl + "/Webgl_KnifeHit.framework.js.unityweb",
-        codeUrl: buildUrl + "/Webgl_KnifeHit.wasm.unityweb",
-        symbolsUrl: buildUrl + "/Webgl_KnifeHit.symbols.json.unityweb",
+        dataUrl: buildUrl + "/hitKnife.data.unityweb",
+        frameworkUrl: buildUrl + "/hitKnife.framework.js.unityweb",
+        codeUrl: buildUrl + "/hitKnife.wasm.unityweb",
+        symbolsUrl: buildUrl + "/hitKnife.symbols.json.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Piperplay",
         productName: "knifehit",
@@ -44,7 +53,8 @@
       const progressBarFull = document.querySelector("#unity-progress-bar-full");
       const fullscreenButton = document.querySelector("#unity-fullscreen-button");
       const spinner = document.querySelector('.spinner');
-
+     
+      setTimeout(function() {
       const canFullscreen = (function() {
         for (const key of [
             'exitFullscreen',
@@ -67,7 +77,7 @@
         setTimeout(function(){ window.scrollTo(0, 1) }, 3000);
 
       }
-      canvas.style.background = "url('" + buildUrl + "/Webgl_KnifeHit.jpg') center / cover";
+      canvas.style.background = "url('" + buildUrl + "/hitKnife.jpg') center / cover";
       loadingCover.style.display = "";
 
       const script = document.createElement("script");
@@ -80,18 +90,25 @@
         }).then((unityInstance) => {
           loadingCover.style.display = "none";
           if (canFullscreen) {
-            /*if (!hideFullScreenButton) {
+            if (!hideFullScreenButton) {
               fullscreenButton.style.display = "";
             }
             fullscreenButton.onclick = () => {
               unityInstance.SetFullscreen(1);
-            };*/
+            };
           }
         }).catch((message) => {
           alert(message);
         });
       };
       document.body.appendChild(script);
+    }, 2000);
     </script>
+    <script>
+      
+      setTimeout(function() {
+   $('#video').fadeOut('slow');
+}, 2500);
+   </script>
   </body>
 </html>
